@@ -4,9 +4,7 @@ import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +32,13 @@ public class ReservationController {
     ) {
         log.info("called getAllReservations");
         return reservationService.findAllReservations();
+    }
+
+    @PostMapping()
+    public Reservation createReservation(
+            @RequestBody Reservation reservationToCreate
+    ) {
+        log.info("called createReservation");
+        return reservationService.createReservation(reservationToCreate);
     }
 }
