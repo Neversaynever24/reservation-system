@@ -51,4 +51,12 @@ public class ReservationService {
         reservationMap.put(newReservation.reservationId(), newReservation);
         return newReservation;
     }
+
+    public Reservation updateReservation(Long reservationid, Reservation reservationToUpdate) {
+
+    }
+
+    public Reservation deleteReservation(Long reservationId) {
+
+    }
 }
